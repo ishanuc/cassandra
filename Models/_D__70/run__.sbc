@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH --job-name=xx_70
+#SBATCH --output=xx_70_
+#SBATCH --error=xx_70__err
+#SBATCH --time=30:00:00
+#SBATCH --qos=normal
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=16
+module load openmpi
+module load boost/1.51
+module load gcc/4.9
+/project/ishanu/code/bin/XgenESeSS_network_parallel -f ../data/DATAx -k "  : 70  " -B 50 -E 600 -c ../data/xgpconfigC3.cfg -n 5    -N ../data/SEQNAMEx -S -P ../data/PARTFILE_4p1x_ -l  __70.log  -m -g 0.01 -G 3000 -v 0
